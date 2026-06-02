@@ -1,0 +1,4 @@
+--DROP
+/*
+Drop table persons
+*/

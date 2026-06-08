@@ -23,3 +23,8 @@ where id=8
 update customers
 set country='France'
 where id in (7,10);
+
+
+update customers
+set score =0
+where score is null

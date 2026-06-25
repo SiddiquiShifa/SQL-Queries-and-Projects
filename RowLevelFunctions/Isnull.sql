@@ -34,3 +34,23 @@
  from Sales.Customers
  
 
+ --Sort customers from lowest to highest scores,
+ --withnulls appearing last
+
+ Select 
+		CustomerID,
+		Score
+ from sales.Customers
+ order by  case when Score is null
+ then 1 else 0 end , Score
+
+ --NullIf
+ --Nullif(value1, value2)
+ --Twi values equal then retrins NULLL otheriwese forstwalue v1 is rerturned
+ --Find sales price for each order by dividig sales by quantity
+ Select 
+	OrderID,
+	Sales,
+	Quantity,
+	Sales/ nullif (quantity,0) as price
+ from Sales.Orders
